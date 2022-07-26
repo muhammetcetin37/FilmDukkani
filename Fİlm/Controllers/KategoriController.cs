@@ -7,21 +7,6 @@ namespace FİlmMvc.Controllers
 {
     public class KategoriController : Controller
     {
-        //private readonly IKategoriManager manager;
-
-        //public KategoriController(IKategoriManager manager)
-        //{
-        //    this.manager = manager;
-        //}
-
-        //public IActionResult Index()
-        //{
-        //    var sonuc = manager.GetAll();
-
-        //    return View(sonuc);
-        //}
-
-
         private readonly SqlDbContext context;
 
         public KategoriController(SqlDbContext context)
@@ -37,23 +22,23 @@ namespace FİlmMvc.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            Kategori kat = new();
-            return View(kat);
+            Kategori kategori = new();
+            return View(kategori);
         }
 
         [HttpPost]
-        public IActionResult Create(Kategori kat)
+        public IActionResult Create(Kategori kategori)
         {
             if (ModelState.IsValid)
             {
 
-                context.Kategoriler.Add(kat);
+                context.Kategoriler.Add(kategori);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
 
 
-            return View(kat);
+            return View(kategori);
         }
     }
 }

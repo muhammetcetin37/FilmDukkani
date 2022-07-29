@@ -21,9 +21,9 @@ namespace Film.BL.Concrete
             return repo.Delete(input);
         }
 
-        public virtual T Get(int id)
+        public virtual T Find(int id)
         {
-            return repo.Get(id);
+            return repo.Find(id);
         }
 
         public virtual IList<T> GetAll(System.Linq.Expressions.Expression<Func<T, bool>> filter = null)

@@ -29,7 +29,7 @@ namespace FİlmMvc.Controllers
         [HttpPost]
         public IActionResult Create(Kategori kategori)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
 
                 context.Kategoriler.Add(kategori);
@@ -39,6 +39,37 @@ namespace FİlmMvc.Controllers
 
 
             return View(kategori);
+        }
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            Kategori kategori = context.Kategoriler.Find(id);
+            return View(kategori);
+        }
+
+        [HttpPost]
+        public IActionResult Update(Kategori kategori)
+        {
+            context.Update(kategori);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var kategori = context.Kategoriler.Find(id);
+            return View(kategori);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Kategori kategori)
+        {
+
+
+            context.Remove(kategori);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+
         }
     }
 }

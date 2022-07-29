@@ -80,10 +80,10 @@ namespace FİlmMvc.Controllers
                 yeniKullanici.TcNo = dTO.TcNo;
                 yeniKullanici.Gsm = dTO.Gsm;
                 yeniKullanici.Password = dTO.Password;
-                yeniKullanici.Role = "User";
+                yeniKullanici.Role = "Uyeler";
                 yeniKullanici.UserName = dTO.UserName;
                 manager.Add(yeniKullanici);
-                return RedirectToAction("Login", "User");
+                return RedirectToAction("Login", "Uyeler");
             }
 
             return View(dTO);

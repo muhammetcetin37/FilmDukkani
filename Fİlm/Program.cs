@@ -1,6 +1,7 @@
 using Film.BL.Abstract;
 using Film.BL.Concrete;
 using Film.DAL.Contexts;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,22 @@ builder.Services
     options.UseSqlServer(builder.Configuration.GetConnectionString("FilmDukkani")));
 
 builder.Services.AddScoped<IKategoriManager, KategoriManager>();
+builder.Services.AddScoped<IUyelerManager, UyelerManager>();
+
+#region Cookie Ayarlari
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/User/Login";
+                    options.LogoutPath = "/User/Logout";
+                    options.AccessDeniedPath = "/User/Yasak";
+                    options.Cookie.Name = "FilmDukkani";
+                    options.Cookie.HttpOnly = true;// Guvenlikle ilgili. Tarayicimizdaki diger scriptler okuyamasin
+                    options.Cookie.SameSite = SameSiteMode.Strict;// Guvenlik ile iligi. Bizim tarayicimiz disinda okunamasin
+                });
+#endregion
+
 
 var app = builder.Build();
 
@@ -24,8 +41,14 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
-//app.UseAuthentication();
+app.UseAuthentication();
 app.UseAuthorization();
+
+
+app.MapControllerRoute(
+    name: "MyArea",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
 
 app.MapControllerRoute(
     name: "default",

@@ -19,8 +19,8 @@
                 <td>@item.KategoriAdi</td>
                 <td>@item.Aciklama</td>
                 <td>
-                    <a class="btn btn-info" asp-action="Create">Guncelle</a>
-                    <a class="btn btn-danger" asp-action="Create">Sil</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-controller="Kategori" asp-route-id="@item.Id">Sil</a>
+                    <a class="btn btn-secondary" asp-action="Update" asp-controller="Kategori" asp-route-id="@item.Id">Güncelle</a>
                 </td>
             </tr>
         }

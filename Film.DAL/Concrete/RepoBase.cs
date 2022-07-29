@@ -24,7 +24,7 @@ namespace Film.DAL.Concrete
             return db.SaveChanges();
         }
 
-        public virtual T Get(int id)
+        public virtual T Find(int id)
         {
             return db.Set<T>().Find(id);
         }

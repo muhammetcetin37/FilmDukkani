@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Film.DAL.Migrations
 {
     [DbContext(typeof(SqlDbContext))]
-    [Migration("20220728152308_initDb")]
+    [Migration("20220729210710_initDb")]
     partial class initDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

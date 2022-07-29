@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Film.DAL.Migrations
 {
     [DbContext(typeof(SqlDbContext))]
-    [Migration("20220717184600_initDb")]
-    partial class initDb
+    [Migration("20220729210812_Login_fields")]
+    partial class Login_fields
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

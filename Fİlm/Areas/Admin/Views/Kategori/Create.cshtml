@@ -5,6 +5,10 @@
 <form asp-controller="Kategori" asp-action="Create" method="post">
    
     <div class="mb-3">
+      <label asp-for="filmler" class="form-label">Film Adi</label>
+      <input type="text" class="form-control" asp-for="filmler">
+    </div>
+    <div class="mb-3">
       <label asp-for="KategoriAdi" class="form-label">Kategori Adi</label>
       <input type="text" class="form-control" asp-for="KategoriAdi">
     </div>
@@ -14,8 +18,8 @@
     </div>
    
 
-    <div class="mb-3">
-        <button type="submit" class="btn btn-primary">Kaydet</button>
-    </div>
+     <button type="submit" class="btn btn-primary">Kaydet</button>
+   
+    <a class="btn btn-danger" asp-action="Index" asp-controller="Kategori">Listeye Geri Dön</a>
 
 </form>

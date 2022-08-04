@@ -1,10 +1,16 @@
 ﻿@model Kategori
 
 <form asp-controller="Kategori" asp-action="Delete" method="post">
+  <div class="mb-3">
+      <label asp-for="filmler" class="form-label">@Model.filmler</label>
+        <input type="text" class="form-control" asp-for="filmler" readonly>
+    </div>
+
     <div class="mb-3">
       <label asp-for="KategoriAdi" class="form-label">@Model.KategoriAdi</label>
         <input type="text" class="form-control" asp-for="KategoriAdi" readonly>
     </div>
+
     <input type="hidden" asp-for="Id" />
     <div class="mb-3">
       <label asp-for="Aciklama" class="form-label">@Model.Aciklama</label>
@@ -12,9 +18,9 @@
   
     </div>
 
-    <button type="submit" class="btn btn-primary">Sil</button>
+    <button type="submit" class="btn btn-danger">Sil</button>
 
-    <a class="btn btn-info" asp-action="Index" asp-controller="Kategori">Listeye Geri Dön</a>
+    <a class="btn btn-primary" asp-action="Index" asp-controller="Kategori">Listeye Geri Dön</a>
 
 
   

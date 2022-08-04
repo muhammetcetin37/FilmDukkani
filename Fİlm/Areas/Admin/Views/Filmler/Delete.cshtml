@@ -1,0 +1,87 @@
+﻿
+@model Filmler
+
+
+<form asp-controller="Filmler" asp-action="Delete" method="post">
+   
+    <div class="mb-3">
+      <label asp-for="FilmAdi" class="form-label">Film Adi</label>
+      <input type="text" class="form-control" asp-for="FilmAdi">
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="Aciklama" class="form-label">Aciklama</label>
+      <input type="text" class="form-control" asp-for="Aciklama">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="Yonetmen" class="form-label">Yonetmen</label>
+      <input type="text" class="form-control" asp-for="Yonetmen">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="Oyuncular" class="form-label">Oyuncular</label>
+      <input type="text" class="form-control" asp-for="Oyuncular">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="TeknikOzellikler" class="form-label">Teknik Ozellikler</label>
+      <input type="text" class="form-control" asp-for="TeknikOzellikler">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="YapimYili" class="form-label">Yapim Yili</label>
+      <input type="text" class="form-control" asp-for="YapimYili">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="SesOzellikleri" class="form-label">Ses Ozellikleri</label>
+      <input type="text" class="form-control" asp-for="SesOzellikleri">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="AltYazilari" class="form-label">Alt Yazilar</label>
+      <input type="text" class="form-control" asp-for="AltYazilari">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="AldigiOduller" class="form-label">Aldigi Oduller</label>
+      <input type="text" class="form-control" asp-for="AldigiOduller">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="BarkodNo" class="form-label">Barkod No</label>
+      <input type="text" class="form-control" asp-for="BarkodNo">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="Tedarikci" class="form-label">Tedarikci</label>
+      <input type="text" class="form-control" asp-for="Tedarikci">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="Fiyat" class="form-label">Fiyat</label>
+      <input type="text" class="form-control" asp-for="Fiyat">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="EklemeTarihi" class="form-label">Ekleme Tarihi</label>
+      <input type="text" class="form-control" asp-for="EklemeTarihi">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="KategoriId" class="form-label">KategoriId</label>
+      <input type="text" class="form-control" asp-for="KategoriId">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="Kategori" class="form-label">Kategori</label>
+      <input type="text" class="form-control" asp-for="Kategori">
+    </div>
+   
+
+    <button type="submit" class="btn btn-danger">Sil</button>
+
+    <a class="btn btn-primary" asp-action="Index" asp-controller="Filmler">Listeye Geri Dön</a>
+
+</form>

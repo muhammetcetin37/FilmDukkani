@@ -5,6 +5,6 @@
 
         public string KategoriAdi { get; set; }
         public string Aciklama { get; set; }
-        public IList<Filmler> Filmler { get; set; }
+        public IList<Filmler> filmler { get; set; }
     }
 }

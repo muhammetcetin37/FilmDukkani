@@ -6,8 +6,11 @@
     <thead>
         <tr>
             <td>@Html.DisplayNameFor(p=>p.Id)</td>
+            <td>@Html.DisplayNameFor(p=>p.filmler)</td>
             <td>@Html.DisplayNameFor(p=>p.KategoriAdi)</td>
             <td>@Html.DisplayNameFor(p=>p.Aciklama)</td>
+            
+
             <td></td>
         </tr>
     </thead>
@@ -16,11 +19,13 @@
         {
             <tr>
                 <td>@item.Id</td>
+                <td>@item.filmler</td>
                 <td>@item.KategoriAdi</td>
                 <td>@item.Aciklama</td>
+                
                 <td>
                     <a class="btn btn-danger" asp-action="Delete" asp-controller="Kategori" asp-route-id="@item.Id">Sil</a>
-                    <a class="btn btn-secondary" asp-action="Update" asp-controller="Kategori" asp-route-id="@item.Id">Güncelle</a>
+                    <a class="btn btn-info" asp-action="Update" asp-controller="Kategori" asp-route-id="@item.Id">Güncelle</a>
                 </td>
             </tr>
         }

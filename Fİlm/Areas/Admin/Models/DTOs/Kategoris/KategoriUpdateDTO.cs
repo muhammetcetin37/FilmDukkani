@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace FİlmMvc.Models.DTOs.Kategoris
 {
-    public class KategoriCreateDTO
+    [Area("Admin")]
+    public class KategoriUpdateDTO
     {
         public int KategoriId { get; set; }
         [Required(ErrorMessage = "KategoriAdi Alani Bos Gecilemez")]

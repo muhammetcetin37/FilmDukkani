@@ -3,8 +3,9 @@ using Film.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace FİlmMvc.Controllers
+namespace FİlmMvc.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class KategoriController : Controller
     {
         private readonly SqlDbContext context;

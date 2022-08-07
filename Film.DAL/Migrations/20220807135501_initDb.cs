@@ -143,7 +143,7 @@ namespace Film.DAL.Migrations
                     AltYazilari = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AldigiOduller = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BarkodNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TedarikciId = table.Column<int>(type: "int", nullable: false),
+                    TedarikciId = table.Column<int>(type: "int", nullable: true),
                     Fiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     EklemeTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
                     KategoriId = table.Column<int>(type: "int", nullable: false),
@@ -162,8 +162,7 @@ namespace Film.DAL.Migrations
                         name: "FK_Filmler_Tedarikciler_TedarikciId",
                         column: x => x.TedarikciId,
                         principalTable: "Tedarikciler",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -172,9 +171,10 @@ namespace Film.DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    AdresTip = table.Column<int>(type: "int", nullable: true),
                     SehirId = table.Column<int>(type: "int", nullable: false),
                     IlceId = table.Column<int>(type: "int", nullable: false),
-                    CaddeSokak = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CaddeSokak = table.Column<int>(type: "int", nullable: false),
                     DısKapiNo = table.Column<int>(type: "int", nullable: false),
                     IcKapiNo = table.Column<int>(type: "int", nullable: false),
                     UyelerId = table.Column<int>(type: "int", nullable: true),

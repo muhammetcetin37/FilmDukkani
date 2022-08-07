@@ -30,9 +30,11 @@ namespace Film.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("CaddeSokak")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("AdresTip")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CaddeSokak")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
@@ -104,7 +106,7 @@ namespace Film.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TedarikciId")
+                    b.Property<int?>("TedarikciId")
                         .HasColumnType("int");
 
                     b.Property<string>("TeknikOzellikler")
@@ -341,16 +343,14 @@ namespace Film.DAL.Migrations
             modelBuilder.Entity("Film.Entities.Filmler", b =>
                 {
                     b.HasOne("Film.Entities.Kategori", "Kategori")
-                        .WithMany("Filmler")
+                        .WithMany("filmler")
                         .HasForeignKey("KategoriId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Film.Entities.Tedarikci", "Tedarikci")
                         .WithMany()
-                        .HasForeignKey("TedarikciId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TedarikciId");
 
                     b.Navigation("Kategori");
 
@@ -370,7 +370,7 @@ namespace Film.DAL.Migrations
 
             modelBuilder.Entity("Film.Entities.Kategori", b =>
                 {
-                    b.Navigation("Filmler");
+                    b.Navigation("filmler");
                 });
 
             modelBuilder.Entity("Film.Entities.Sehir", b =>

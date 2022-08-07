@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace FİlmMvc.Controllers
+namespace FİlmMvc.Areas.Admin.Controllers
 {
     public class UyelerController : Controller
     {

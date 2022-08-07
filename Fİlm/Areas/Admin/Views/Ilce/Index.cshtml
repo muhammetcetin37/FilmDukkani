@@ -1,0 +1,38 @@
+﻿
+@model IEnumerable<Ilce>
+
+<a class="btn btn-primary" asp-action="Create">Yeni Ilce</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(p=>p.Id)</td>
+            <td>@Html.DisplayNameFor(p=>p.IlceAdi)</td>
+            <td>@Html.DisplayNameFor(p=>p.SehirId)</td>
+            
+           
+           
+            
+
+            <td></td>
+        </tr>
+    </thead>
+    <tbody> 
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.IlceAdi</td>
+                <td>@item.SehirId</td>
+                
+                
+                
+                
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-controller="Ilce" asp-route-id="@item.Id">Sil</a>
+                    <a class="btn btn-info" asp-action="Update" asp-controller="Ilce" asp-route-id="@item.Id">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

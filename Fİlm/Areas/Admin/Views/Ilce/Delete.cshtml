@@ -1,0 +1,22 @@
+﻿
+@model Ilce
+
+
+<form asp-controller="Ilce" asp-action="Delete" method="post">
+   
+    <div class="mb-3">
+      <label asp-for="IlceAdi" class="form-label">Ilce Id</label>
+      <input type="text" class="form-control" asp-for="IlceAdi">
+    </div>
+     <div class="mb-3">
+      <label asp-for="SehirId" class="form-label">Sehir Id</label>
+      <input type="text" class="form-control" asp-for="SehirId">
+    </div>
+    
+   
+
+     <button type="submit" class="btn btn-danger">Sil</button>
+   
+    <a class="btn btn-info" asp-action="Index" asp-controller="Ilce">Listeye Geri Dön</a>
+
+</form>

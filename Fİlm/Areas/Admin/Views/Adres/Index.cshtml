@@ -1,0 +1,40 @@
+﻿
+@model IEnumerable<Adres>
+
+<a class="btn btn-primary" asp-action="Create">Yeni Adres</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(p=>p.Id)</td>
+            <td>@Html.DisplayNameFor(p=>p.SehirId)</td>
+            <td>@Html.DisplayNameFor(p=>p.IlceId)</td>
+            <td>@Html.DisplayNameFor(p=>p.CaddeSokak)</td>
+            <td>@Html.DisplayNameFor(p=>p.DısKapiNo)</td>
+            <td>@Html.DisplayNameFor(p=>p.IcKapiNo)</td>
+            <td>@Html.DisplayNameFor(p=>p.AdresTip)</td>
+            
+
+            <td></td>
+        </tr>
+    </thead>
+    <tbody> 
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.SehirId</td>
+                <td>@item.IlceId</td>
+                <td>@item.CaddeSokak</td>
+                <td>@item.DısKapiNo</td>
+                <td>@item.IcKapiNo</td>
+                <td>@item.AdresTip</td>
+                
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-controller="Adres" asp-route-id="@item.Id">Sil</a>
+                    <a class="btn btn-info" asp-action="Update" asp-controller="Adres" asp-route-id="@item.Id">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

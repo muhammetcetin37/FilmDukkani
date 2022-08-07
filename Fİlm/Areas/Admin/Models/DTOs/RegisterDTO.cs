@@ -17,11 +17,12 @@ namespace FİlmMvc.Models.DTOs
 
         [Required]
         [MinLength(11, ErrorMessage = "TcNo Alani En Az 11 Karakter Olmalidir.")]
+        [MaxLength(15)]
         public string TcNo { get; set; }
 
         [Required]
         [MinLength(10, ErrorMessage = "Gsm Alani En Az 10 Karakter Olmalidir.")]
-        [MaxLength(11, ErrorMessage = "Gsm Alani 11 Karakterden Fazla olmamalidir.")]
+        [MaxLength(14, ErrorMessage = "Gsm Alani 11 Karakterden Fazla olmamalidir.")]
         public string Gsm { get; set; }
 
 

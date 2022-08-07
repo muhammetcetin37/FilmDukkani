@@ -17,6 +17,9 @@ builder.Services.AddScoped<IKategoriManager, KategoriManager>();
 builder.Services.AddScoped<IUyelerManager, UyelerManager>();
 builder.Services.AddScoped<IFilmlerManager, FilmlerManager>();
 builder.Services.AddScoped<ITedarikciManager, TedarikciManager>();
+builder.Services.AddScoped<IAdresManager, AdresManager>();
+builder.Services.AddScoped<ISehirManager, SehirManager>();
+builder.Services.AddScoped<IilceManager, IlceManager>();
 
 #region Cookie Ayarlari
 

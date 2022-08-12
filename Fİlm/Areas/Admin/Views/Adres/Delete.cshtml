@@ -5,11 +5,11 @@
 <form asp-controller="Adres" asp-action="Delete" method="post">
    
     <div class="mb-3">
-      <label asp-for="SehirId" class="form-label">Sehir Adi</label>
+      <label asp-for="SehirId" class="form-label">Sehir Id</label>
       <input type="text" class="form-control" asp-for="SehirId">
     </div>
     <div class="mb-3">
-      <label asp-for="IlceId" class="form-label">Ilce Adi</label>
+      <label asp-for="IlceId" class="form-label">Ilce Id</label>
       <input type="text" class="form-control" asp-for="IlceId">
     </div>
     <div class="mb-3">
@@ -29,9 +29,10 @@
       <input type="text" class="form-control" asp-for="AdresTip">
     </div>
    
+   
 
      <button type="submit" class="btn btn-danger">Sil</button>
    
-    <a class="btnbtn-info" asp-action="Index" asp-controller="Adres">Listeye Geri Dön</a>
+    <a class="btn btn-info" asp-action="Index" asp-controller="Adres">Listeye Geri Dön</a>
 
 </form>

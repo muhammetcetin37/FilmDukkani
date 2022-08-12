@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace FİlmMvc.Models.DTOs.Kategoris
+namespace FİlmMvc.Areas.Admin.Models.DTOs
 {
     [Area("Admin")]
     public class KategoriCreateDTO

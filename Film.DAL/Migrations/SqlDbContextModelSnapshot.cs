@@ -145,6 +145,9 @@ namespace Film.DAL.Migrations
                     b.Property<int>("KategoriId")
                         .HasColumnType("int");
 
+                    b.Property<int>("PaketId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("FilmlerKategori");

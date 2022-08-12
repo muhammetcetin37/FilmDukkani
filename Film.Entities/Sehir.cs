@@ -4,6 +4,7 @@
     {
 
         public string SehirAdi { get; set; }
+
         public ICollection<Ilce> Ilce { get; set; }
     }
 }

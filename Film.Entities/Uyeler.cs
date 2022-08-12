@@ -13,6 +13,7 @@
         public string Password { get; set; }
         public string Role { get; set; }
         #endregion
+
         public IList<Adres> Adresler { get; set; }
     }
 }

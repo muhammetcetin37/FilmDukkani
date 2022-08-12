@@ -13,5 +13,6 @@ namespace FİlmMvc.Areas.Admin.Models.DTOs.Adress
         public string CaddeSokak { get; set; }
         public int DısKapiNo { get; set; }
         public int IcKapiNo { get; set; }
+
     }
 }

@@ -18,5 +18,6 @@
         public int DısKapiNo { get; set; }
         public int IcKapiNo { get; set; }
 
+
     }
 }

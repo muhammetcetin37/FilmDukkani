@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FİlmMvc.Models.DTOs
+namespace FİlmMvc.Areas.Admin.Models.DTOs
 {
     public class LoginDTO
     {

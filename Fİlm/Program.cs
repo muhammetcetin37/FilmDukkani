@@ -26,13 +26,14 @@ builder.Services.AddScoped<IilceManager, IlceManager>();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
                 {
-                    options.LoginPath = "/User/Login";
-                    options.LogoutPath = "/User/Logout";
-                    options.AccessDeniedPath = "/User/Yasak";
+                    options.LoginPath = "/Uyeler/Login";
+                    options.LogoutPath = "/Uyeler/Logout";
+                    options.AccessDeniedPath = "/Uyeler/Yasak";
                     options.Cookie.Name = "FilmDukkani";
                     options.Cookie.HttpOnly = true;// Guvenlikle ilgili. Tarayicimizdaki diger scriptler okuyamasin
                     options.Cookie.SameSite = SameSiteMode.Strict;// Guvenlik ile iligi. Bizim tarayicimiz disinda okunamasin
                 });
+
 #endregion
 
 
@@ -51,7 +52,7 @@ app.UseAuthorization();
 
 
 app.MapControllerRoute(
-    name: "MyArea",
+    name: "AdminArea",
     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(

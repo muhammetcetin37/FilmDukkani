@@ -1,10 +1,12 @@
 ﻿using Film.DAL.Contexts;
 using Film.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FİlmMvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class AdresController : Controller
     {
         private readonly SqlDbContext context;

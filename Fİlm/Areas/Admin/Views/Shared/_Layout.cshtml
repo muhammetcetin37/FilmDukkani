@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Fİlm</title>
+    <title>@ViewData["Title"] - FilmDukkani</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
          <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
@@ -18,7 +18,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Fİlm Dukkani</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Film Dukkani</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -29,34 +29,32 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
                         </li>
 
+                        
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Kategori" asp-action="Index">Kategori</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Kategori">Kategori</a>
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Filmler" asp-action="Index">Filmler</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Filmler">Filmler</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Tedarikci">Tedarikci</a>
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Tedarikci" asp-action="Index">Tedarikci</a>
                         </li>
 
                          <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Adres">Adresler</a>
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Adres" asp-action="Index">Adresler</a>
                         </li>
                          <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Sehir">Sehirler</a>
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Sehir" asp-action="Index">Sehirler</a>
                         </li>
                          <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Ilce">Ilceler</a>
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Ilce" asp-action="Index">Ilceler</a>
                         </li>
 
                         <li class="nav-item">
-                            <a  class="nav-link text-dark" asp-area="Admin" asp-controller="Uyeler" asp-action="Login">Logout</a>
+                            <a  class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
                         </li>
                         
                        

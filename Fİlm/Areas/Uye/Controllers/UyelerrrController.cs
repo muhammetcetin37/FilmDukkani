@@ -29,20 +29,20 @@ namespace FİlmMvc.Areas.Uye.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = manager.GetAll(p => p.Email == uyeDTO.Email && p.Password == uyeDTO.Password)
+                var uyeler = manager.GetAll(p => p.Email == uyeDTO.Email && p.Password == uyeDTO.Password)
                                     .FirstOrDefault();
 
-                if (user != null)
+                if (uyeler != null)
                 {
                     var claims = new List<Claim>
                     {
-                        new Claim(ClaimTypes.Name,user.UserName),
-                        new Claim(ClaimTypes.Email,user.Email),
-                        new Claim(ClaimTypes.Role,user.Role)
+                        new Claim(ClaimTypes.Name,uyeler.UserName),
+                        new Claim(ClaimTypes.Email,uyeler.Email),
+                        new Claim(ClaimTypes.Role,uyeler.Role)
                     };
 
-                    var userIdentity = new ClaimsIdentity(claims, "uye");
-                    ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
+                    var uyelerIdentity = new ClaimsIdentity(claims, "uye");
+                    ClaimsPrincipal principal = new ClaimsPrincipal(uyelerIdentity);
                     await HttpContext.SignInAsync(principal);
 
                     return RedirectToAction("Index", "Home", new { Area = "Uye" });

@@ -32,6 +32,7 @@
                       @{
                           if (Context.User.Identity.IsAuthenticated) // Burasi cookie ile oturum acilmismi onu kontrol eder
                             {   
+                                
 
                               <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="Uye" asp-controller="Filmler" asp-action="Index">Filmler</a>
@@ -40,10 +41,10 @@
                       
 
                               <li class="nav-item">
-                                 <a  class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
+                                 <a  class="nav-link text-dark" asp-area="" asp-controller="Uyeler" asp-action="Logout">Logout</a>
                               </li>
                         
-                             } 
+                            } 
                             else
                             { 
                               <li class="nav-item">

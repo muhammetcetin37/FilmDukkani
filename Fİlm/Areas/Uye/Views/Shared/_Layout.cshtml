@@ -29,18 +29,30 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
                         </li>
 
-                        
+                      @{
+                          if (Context.User.Identity.IsAuthenticated) // Burasi cookie ile oturum acilmismi onu kontrol eder
+                            {   
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Uye" asp-controller="Filmler" asp-action="Index">Filmler</a>
-                        </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Uye" asp-controller="Filmler" asp-action="Index">Filmler</a>
+                              </li>
 
                       
 
-                        <li class="nav-item">
-                            <a  class="nav-link text-dark" asp-area="Uye" asp-controller="Uyelerrr" asp-action="Uye">Logout</a>
-                        </li>
+                              <li class="nav-item">
+                                 <a  class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
+                              </li>
                         
+                             } 
+                            else
+                            { 
+                              <li class="nav-item">
+                                   <a class="nav-link text-dark" asp-area="Uye" asp-controller="Uyelerrr" asp-action="Uye">Uye</a>
+                              </li>
+                            }
+
+                            
+                         }
                        
                            
                     </ul>

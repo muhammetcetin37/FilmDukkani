@@ -32,7 +32,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         
-
+@*
                          @{
                             if (Context.User.Identity.IsAuthenticated) // Burasi cookie ile oturum acilmismi onu kontrol eder
                             { 
@@ -48,19 +48,23 @@
                                 
                             
                             } 
-                            else
-                            {   <li class="nav-item">
+                            else*@
+                           @* {*@  
+                               <li class="nav-item">
                                             <a class="nav-link text-dark" asp-area="Admin" asp-controller="Uyeler" asp-action="Login">Admin</a>
                                     </li>
-                            }
+                                     <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="Uye" asp-controller="Uyelerrr" asp-action="Uye">Uye</a>
+                                    </li>
+                           @* }
 
                             
-                          }
+                          }*@
 
                       
                     </ul>
                    
-                </div>
+               @* </div>
                  <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                        
@@ -87,7 +91,7 @@
                             }
                                   
                     </ul>
-                </div>
+                </div>*@
             </div>
         </nav>
     </header>

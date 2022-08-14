@@ -1,0 +1,33 @@
+﻿@model Paket
+
+<form asp-controller="Paket" asp-action="Delete" method="post">
+  <div class="mb-3">
+      <label asp-for="UyelikModeli" class="form-label">@Model.UyelikModeli</label>
+        <input type="text" class="form-control" asp-for="UyelikModeli" readonly>
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="Degisim" class="form-label">@Model.Degisim</label>
+        <input type="text" class="form-control" asp-for="Degisim" readonly>
+    </div>
+
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+      <label asp-for="AylikFilmSayisi" class="form-label">@Model.AylikFilmSayisi</label>
+       <input type="text" class="form-control" asp-for="AylikFilmSayisi" readonly>
+  
+    </div>
+    <div class="mb-3">
+      <label asp-for="AylikUcret" class="form-label">@Model.AylikUcret</label>
+       <input type="text" class="form-control" asp-for="AylikUcret" readonly>
+  
+    </div>
+
+    <button type="submit" class="btn btn-danger">Sil</button>
+
+    <a class="btn btn-primary" asp-action="Index" asp-controller="Paket">Listeye Geri Dön</a>
+
+
+  
+
+</form>

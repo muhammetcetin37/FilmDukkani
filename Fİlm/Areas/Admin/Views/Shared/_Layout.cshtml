@@ -29,34 +29,52 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
                         </li>
 
-                        
+                         @{
+                            if (Context.User.Identity.IsAuthenticated) // Burasi cookie ile oturum acilmismi onu kontrol eder
+                            { 
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Kategori" asp-action="Index">Kategori</a>
-                        </li>
+                               <li class="nav-item">
+                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Kategori" asp-action="Index">Kategori</a>
+                               </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Filmler" asp-action="Index">Filmler</a>
-                        </li>
+                               <li class="nav-item">
+                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Filmler" asp-action="Index">Filmler</a>
+                               </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Tedarikci" asp-action="Index">Tedarikci</a>
-                        </li>
+                               <li class="nav-item">
+                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Tedarikci" asp-action="Index">Tedarikci</a>
+                               </li>
 
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Adres" asp-action="Index">Adresler</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Sehir" asp-action="Index">Sehirler</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Ilce" asp-action="Index">Ilceler</a>
-                        </li>
+                               <li class="nav-item">
+                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Paket" asp-action="Index">Paket</a>
+                               </li>
 
-                        <li class="nav-item">
-                            <a  class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
-                        </li>
-                        
+                               <li class="nav-item">
+                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Adres" asp-action="Index">Adresler</a>
+                               </li>
+
+                               <li class="nav-item">
+                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Sehir" asp-action="Index">Sehirler</a>
+                               </li>
+
+                               <li class="nav-item">
+                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Ilce" asp-action="Index">Ilceler</a>
+                               </li>
+
+                               <li class="nav-item">
+                                 <a  class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
+                               </li>
+                         
+                            } 
+                            else
+                            { 
+                              <li class="nav-item">
+                                   <a class="nav-link text-dark" asp-area="Admin" asp-controller="Uyeler" asp-action="Login">Admin</a>
+                              </li>
+                            }
+
+                            
+                         }
                        
                            
                     </ul>

@@ -1,0 +1,29 @@
+﻿
+@model Paket
+
+
+<form asp-controller="Paket" asp-action="Create" method="post">
+   
+    <div class="mb-3">
+      <label asp-for="UyelikModeli" class="form-label">Uyelik Modeli</label>
+      <input type="text" class="form-control" asp-for="UyelikModeli">
+    </div>
+    <div class="mb-3">
+      <label asp-for="Degisim" class="form-label">Degisim</label>
+      <input type="text" class="form-control" asp-for="Degisim">
+    </div>
+    <div class="mb-3">
+      <label asp-for="AylikFilmSayisi" class="form-label">Aylik Film Sayisi</label>
+      <input type="text" class="form-control" asp-for="AylikFilmSayisi">
+    </div>
+     <div class="mb-3">
+      <label asp-for="AylikUcret" class="form-label">Aylik Ucret</label>
+      <input type="text" class="form-control" asp-for="AylikUcret">
+    </div>
+   
+
+     <button type="submit" class="btn btn-primary">Kaydet</button>
+   
+    <a class="btn btn-info" asp-action="Index" asp-controller="Paket">Listeye Geri Dön</a>
+
+</form>

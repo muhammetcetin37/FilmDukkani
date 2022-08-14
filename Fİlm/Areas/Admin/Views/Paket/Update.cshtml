@@ -1,0 +1,33 @@
+﻿@model Paket
+
+
+<form asp-controller="Paket" asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+    <div class="mb-3">
+      <label asp-for="UyelikModeli" class="form-label">Uyelik Modeli</label>
+      <input type="text" class="form-control" asp-for="UyelikModeli" value="@Model.UyelikModeli">
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="Degisim" class="form-label">Degisim</label>
+      <input type="text" class="form-control" asp-for="Degisim" value="@Model.Degisim">
+  
+    </div>
+    <div class="mb-3">
+      <label asp-for="AylikFilmSayisi" class="form-label">Aylik Film Sayisi</label>
+      <input type="text" class="form-control" asp-for="AylikFilmSayisi" value="@Model.AylikFilmSayisi">
+  
+    </div>
+    <div class="mb-3">
+      <label asp-for="AylikUcret" class="form-label">Aylik Ucret</label>
+      <input type="text" class="form-control" asp-for="AylikUcret" value="@Model.AylikUcret">
+  
+    </div>
+
+   
+    <input type="submit" class="btn btn-primary" value="Kaydet"/>
+             
+    
+     <a class="btn btn-info" asp-action="Index" asp-controller="Paket">Listeye Geri Dön</a>
+   
+</form>

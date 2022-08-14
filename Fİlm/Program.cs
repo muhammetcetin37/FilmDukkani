@@ -20,6 +20,7 @@ builder.Services.AddScoped<ITedarikciManager, TedarikciManager>();
 builder.Services.AddScoped<IAdresManager, AdresManager>();
 builder.Services.AddScoped<ISehirManager, SehirManager>();
 builder.Services.AddScoped<IilceManager, IlceManager>();
+builder.Services.AddScoped<IPaketManager, PaketManager>();
 
 #region Cookie Ayarlari
 

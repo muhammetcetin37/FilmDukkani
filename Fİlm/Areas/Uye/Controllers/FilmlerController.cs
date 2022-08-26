@@ -20,5 +20,7 @@ namespace FİlmMvc.Areas.Uye.Controllers
             var result = context.Filmler.ToList();
             return View(result);
         }
+
+
     }
 }

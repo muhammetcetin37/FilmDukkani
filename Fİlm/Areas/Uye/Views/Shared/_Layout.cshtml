@@ -14,19 +14,19 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Fİlm.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body >
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Fİlm Dukkani</a>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="background-image: url('img/film3.jpg');background-size: 100% 1000%;">
+            <div class="container-fluid" >
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"  style="color:#ff0000; font-weight: bold;">Film Dukkani</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" >
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between"  >
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+                        <li class="nav-item" style="color:#000000; font-weight: bold;">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="color:#000000; font-weight: bold;" >Ana Sayfa</a>
                         </li>
 
                       @{
@@ -35,20 +35,28 @@
                                 
 
                               <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Uye" asp-controller="Filmler" asp-action="Index">Filmler</a>
+                                <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Uye" asp-controller="Filmler" asp-action="Index" >Filmler</a>
+                              </li>
+
+                               <li class="nav-item" >
+                                <a class="nav-link text-dark" style="color:#000000; font-weight: bold;"  asp-area="Uye" asp-controller="Sepet" asp-action="Index">Sepet</a>
+                              </li>
+
+                               <li class="nav-item" >
+                                <a class="nav-link text-dark" style="color:#000000; font-weight: bold;"  asp-area="Uye" asp-controller="Adres" asp-action="Index">Adres</a>
                               </li>
 
                       
 
                               <li class="nav-item">
-                                 <a  class="nav-link text-dark" asp-area="" asp-controller="Uyeler" asp-action="Logout">Logout</a>
+                                 <a  class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="" asp-controller="Uyeler" asp-action="Logout">Logout</a>
                               </li>
                         
                             } 
                             else
                             { 
-                              <li class="nav-item">
-                                   <a class="nav-link text-dark" asp-area="Uye" asp-controller="Uyelerrr" asp-action="Uye">Uye</a>
+                              <li class="nav-item" >
+                                   <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Uye" asp-controller="Uyelerrr" asp-action="Uye">Uye</a>
                               </li>
                             }
 

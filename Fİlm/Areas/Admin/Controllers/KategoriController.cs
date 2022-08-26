@@ -32,7 +32,7 @@ namespace FİlmMvc.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(Kategori kategori)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
 
                 context.Kategoriler.Add(kategori);

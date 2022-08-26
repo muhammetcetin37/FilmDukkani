@@ -4,6 +4,11 @@
 <form asp-controller="Kategori" asp-action="Update" method="post">
     <input type="hidden" asp-for="Id" value="@Model.Id" />
     <div class="mb-3">
+      <label asp-for="filmler" class="form-label">Film Adi</label>
+      <input type="text" class="form-control" asp-for="filmler" value="@Model.filmler">
+    </div>
+    
+    <div class="mb-3">
       <label asp-for="KategoriAdi" class="form-label">Kategori Adi</label>
       <input type="text" class="form-control" asp-for="KategoriAdi" value="@Model.KategoriAdi">
     </div>

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Film.DAL.Migrations
 {
     [DbContext(typeof(SqlDbContext))]
-    [Migration("20220807161507_initDb")]
+    [Migration("20220825133345_initDb")]
     partial class initDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,11 +32,12 @@ namespace Film.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("AdresTip")
+                    b.Property<int>("AdresTip")
                         .HasColumnType("int");
 
-                    b.Property<int>("CaddeSokak")
-                        .HasColumnType("int");
+                    b.Property<string>("CaddeSokak")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
@@ -50,15 +51,17 @@ namespace Film.DAL.Migrations
                     b.Property<int>("IlceId")
                         .HasColumnType("int");
 
+                    b.Property<int>("KargoId")
+                        .HasColumnType("int");
+
                     b.Property<int>("SehirId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UyelerId")
-                        .HasColumnType("int");
+                    b.Property<string>("UyeAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UyelerId");
 
                     b.ToTable("Adresler");
                 });
@@ -78,7 +81,6 @@ namespace Film.DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AltYazilari")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("BarkodNo")
@@ -94,7 +96,7 @@ namespace Film.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal?>("Fiyat")
+                    b.Property<decimal>("Fiyat")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("KategoriId")
@@ -105,7 +107,6 @@ namespace Film.DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SesOzellikleri")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TedarikciId")
@@ -141,13 +142,16 @@ namespace Film.DAL.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("FilmId")
+                    b.Property<int>("FilmlerId")
                         .HasColumnType("int");
 
                     b.Property<int>("KategoriId")
                         .HasColumnType("int");
 
                     b.Property<int>("PaketId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SepetId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -178,6 +182,30 @@ namespace Film.DAL.Migrations
                     b.HasIndex("SehirId");
 
                     b.ToTable("Ilceler");
+                });
+
+            modelBuilder.Entity("Film.Entities.Kargo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("KargoAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("KargoTel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Kargo");
                 });
 
             modelBuilder.Entity("Film.Entities.Kategori", b =>
@@ -212,9 +240,8 @@ namespace Film.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("AylikFilmSayisi")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("AylikFilmSayisi")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("AylikUcret")
                         .HasColumnType("decimal(18,2)");
@@ -253,6 +280,36 @@ namespace Film.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sehirler");
+                });
+
+            modelBuilder.Entity("Film.Entities.Sepet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FilmAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Fiyat")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("KategoriAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("SepeteEklemeTarihi")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sepet");
                 });
 
             modelBuilder.Entity("Film.Entities.Tedarikci", b =>
@@ -302,6 +359,9 @@ namespace Film.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("AdresId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
@@ -323,19 +383,14 @@ namespace Film.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Uyeler");
-                });
+                    b.HasIndex("AdresId");
 
-            modelBuilder.Entity("Film.Entities.Adres", b =>
-                {
-                    b.HasOne("Film.Entities.Uyeler", null)
-                        .WithMany("Adresler")
-                        .HasForeignKey("UyelerId");
+                    b.ToTable("Uyeler");
                 });
 
             modelBuilder.Entity("Film.Entities.Filmler", b =>
                 {
-                    b.HasOne("Film.Entities.Kategori", "Kategori")
+                    b.HasOne("Film.Entities.Kategori", "kategori")
                         .WithMany("filmler")
                         .HasForeignKey("KategoriId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -345,9 +400,9 @@ namespace Film.DAL.Migrations
                         .WithMany()
                         .HasForeignKey("TedarikciId");
 
-                    b.Navigation("Kategori");
-
                     b.Navigation("Tedarikci");
+
+                    b.Navigation("kategori");
                 });
 
             modelBuilder.Entity("Film.Entities.Ilce", b =>
@@ -361,6 +416,18 @@ namespace Film.DAL.Migrations
                     b.Navigation("Sehir");
                 });
 
+            modelBuilder.Entity("Film.Entities.Uyeler", b =>
+                {
+                    b.HasOne("Film.Entities.Adres", null)
+                        .WithMany("Uyeler")
+                        .HasForeignKey("AdresId");
+                });
+
+            modelBuilder.Entity("Film.Entities.Adres", b =>
+                {
+                    b.Navigation("Uyeler");
+                });
+
             modelBuilder.Entity("Film.Entities.Kategori", b =>
                 {
                     b.Navigation("filmler");
@@ -369,11 +436,6 @@ namespace Film.DAL.Migrations
             modelBuilder.Entity("Film.Entities.Sehir", b =>
                 {
                     b.Navigation("Ilce");
-                });
-
-            modelBuilder.Entity("Film.Entities.Uyeler", b =>
-                {
-                    b.Navigation("Adresler");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,33 @@
+﻿@model Sepet
+
+<form asp-controller="Sepet" asp-action="Delete" method="post">
+  <div class="mb-3">
+      <label asp-for="FilmAdi" class="form-label">@Model.FilmAdi</label>
+        <input type="text" class="form-control" asp-for="FilmAdi" readonly>
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="KategoriAdi" class="form-label">@Model.KategoriAdi</label>
+        <input type="text" class="form-control" asp-for="KategoriAdi" readonly>
+    </div>
+
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+      <label asp-for="SepeteEklemeTarihi" class="form-label">@Model.SepeteEklemeTarihi</label>
+       <input type="text" class="form-control" asp-for="SepeteEklemeTarihi" readonly>
+  
+    </div>
+    <div class="mb-3">
+      <label asp-for="Fiyat" class="form-label">@Model.Fiyat</label>
+       <input type="text" class="form-control" asp-for="Fiyat" readonly>
+  
+    </div>
+
+    <button type="submit" class="btn btn-danger">Sil</button>
+
+    <a class="btn btn-primary" asp-action="Index" asp-controller="Sepet">Listeye Geri Dön</a>
+
+
+  
+
+</form>

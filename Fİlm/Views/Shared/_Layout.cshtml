@@ -10,15 +10,21 @@
      <link rel="stylesheet" href="~/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <link rel="stylesheet" href="~/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
        <link rel="stylesheet" href="~/dist/css/adminlte.min.css">
-
+       
+   
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Fİlm.styles.css" asp-append-version="true" />
 </head>
 <body>
+   
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-blue border-bottom box-shadow mb-3" style="background-image: url('img/filmm.jpg');background-size: 1000% 100%;">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FilmDukkani</a>
+               @* <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FilmDukkani</a>*@
+               <img src="~/img/FILMDUKKANI_free-file (1).png" width="150" height="50" alt="Web Sitesi Logosu" />
+               
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -32,66 +38,20 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         
-@*
-                         @{
-                            if (Context.User.Identity.IsAuthenticated) // Burasi cookie ile oturum acilmismi onu kontrol eder
-                            { 
-                                 
-                                     <li class="nav-item">
 
-                                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Uyeler" asp-action="Update">Hoş geldiniz @Context.User.Identity.Name</a>
-                                      </li>
-
-                                      <li class="nav-item">
-                                            <a  class="nav-link text-dark" asp-area="" asp-controller="Uyeler" asp-action="Logout">Logout</a>
-                                      </li>
-                                
-                            
-                            } 
-                            else*@
-                           @* {*@  
+                  
                                <li class="nav-item">
                                             <a class="nav-link text-dark" asp-area="Admin" asp-controller="Uyeler" asp-action="Login">Admin</a>
                                     </li>
                                      <li class="nav-item">
                                             <a class="nav-link text-dark" asp-area="Uye" asp-controller="Uyelerrr" asp-action="Uye">Uye</a>
                                     </li>
-                           @* }
-
-                            
-                          }*@
+                         
 
                       
                     </ul>
                    
-               @* </div>
-                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                       
-                 @{
-                            if (Context.User.Identity.IsAuthenticated) // Burasi cookie ile oturum acilmismi onu kontrol eder
-                            { 
-                                     
-
-                                     <li class="nav-item">
-
-                                            <a class="nav-link text-dark" asp-area="Uye" asp-controller="Uyelerrr" asp-action="Update">Hoş geldiniz @Context.User.Identity.Name</a>
-                                      </li>
-
-                                      <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="Uyeler" asp-action="Logout">Logout</a>
-                                      </li>
-                            
-                            } 
-                            else
-                            {   <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="Uye" asp-controller="Uyelerrr" asp-action="Uye">Uye</a>
-                                    </li>
-                            }
-                            }
-                                  
-                    </ul>
-                </div>*@
+               
             </div>
         </nav>
     </header>
@@ -100,16 +60,18 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted" style="position: absolute; bottom:0; width: 500px; margin: 0 auto;" >
         <div class="container">
-            &copy; 2022 - Fİlm - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - Fİlm 
         </div>
     </footer>
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/dist/js/adminlte.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+   
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

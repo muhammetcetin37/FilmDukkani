@@ -14,6 +14,6 @@
         public string Role { get; set; }
         #endregion
 
-        public IList<Adres> Adresler { get; set; }
+        //public ICollection<Adres> Adresler { get; set; }
     }
 }

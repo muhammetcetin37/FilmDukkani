@@ -83,6 +83,15 @@ namespace FİlmMvc.Areas.Uye.Controllers
                 yeniKullanici.Password = dTO.Password;
                 yeniKullanici.Role = "User";
                 yeniKullanici.UserName = dTO.UserName;
+                //yeniKullanici.Adresler = new List<Adres>();
+                //Adres yeniAdres = new Adres
+                //{
+                //    SehirId = dTO.Adresler.SehirId,
+                //    IlceId = dTO.Adresler.IlceId,
+                //    AdresTip = AdresTip.Ev
+                //};
+                //yeniKullanici.Adresler.Add(yeniAdres);
+
                 manager.Add(yeniKullanici);
                 return RedirectToAction("Uye", "Uyelerrr");
             }

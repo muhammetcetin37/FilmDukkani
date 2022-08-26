@@ -4,7 +4,7 @@
     {
         public string UyelikModeli { get; set; }
         public string Degisim { get; set; }
-        public string AylikFilmSayisi { get; set; }
+        public int AylikFilmSayisi { get; set; }
         public decimal AylikUcret { get; set; }
     }
 }

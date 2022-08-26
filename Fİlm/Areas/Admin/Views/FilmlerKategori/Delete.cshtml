@@ -1,0 +1,31 @@
+﻿
+@model FilmlerKategori
+
+
+<form asp-controller="FilmlerKategori" asp-action="Delete" method="post">
+   
+    <div class="mb-3">
+      <label asp-for="FilmlerId" class="form-label">Film Id</label>
+      <input type="text" class="form-control" asp-for="FilmlerId">
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="KategoriId" class="form-label">Kategori Id</label>
+      <input type="text" class="form-control" asp-for="KategoriId">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="PaketId" class="form-label">Paket Id</label>
+      <input type="text" class="form-control" asp-for="PaketId">
+    </div>
+
+     <div class="mb-3">
+      <label asp-for="Id" class="form-label">Id</label>
+      <input type="text" class="form-control" asp-for="Id">
+    </div>
+
+    <button type="submit" class="btn btn-danger">Sil</button>
+
+    <a class="btn btn-info" asp-action="Index" asp-controller="FilmlerKategori">Listeye Geri Dön</a>
+
+</form>

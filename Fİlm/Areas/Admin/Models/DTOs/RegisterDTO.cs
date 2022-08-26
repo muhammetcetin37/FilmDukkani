@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace FİlmMvc.Areas.Admin.Models
 {
+    [Area("Admin")]
     public class RegisterDTO
     {
 
@@ -30,9 +32,9 @@ namespace FİlmMvc.Areas.Admin.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Required]
+        //[Required]
 
-        public string Adresler { get; set; }
+        //public string Adresler { get; set; }
 
 
         [Required]

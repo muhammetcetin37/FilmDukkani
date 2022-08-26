@@ -31,7 +31,7 @@ namespace FİlmMvc.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(Adres adres)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
 
                 context.Adresler.Add(adres);

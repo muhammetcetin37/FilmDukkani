@@ -1,0 +1,33 @@
+﻿@model Sepet
+
+
+<form asp-controller="Sepet" asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+    <div class="mb-3">
+      <label asp-for="FilmAdi" class="form-label">Film Adi</label>
+      <input type="text" class="form-control" asp-for="FilmAdi" value="@Model.FilmAdi">
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="KategoriAdi" class="form-label">Kategori Adi</label>
+      <input type="text" class="form-control" asp-for="KategoriAdi" value="@Model.KategoriAdi">
+  
+    </div>
+    <div class="mb-3">
+      <label asp-for="SepeteEklemeTarihi" class="form-label">Sepete Ekleme Tarihi</label>
+      <input type="text" class="form-control" asp-for="SepeteEklemeTarihi" value="@Model.SepeteEklemeTarihi">
+  
+    </div>
+    <div class="mb-3">
+      <label asp-for="Fiyat" class="form-label">Fiyat </label>
+      <input type="text" class="form-control" asp-for="Fiyat" value="@Model.Fiyat">
+  
+    </div>
+
+   
+    <input type="submit" class="btn btn-primary" value="Kaydet"/>
+             
+    
+     <a class="btn btn-info" asp-action="Index" asp-controller="Sepet">Listeye Geri Dön</a>
+   
+</form>

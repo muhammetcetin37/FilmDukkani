@@ -9,14 +9,20 @@ namespace FİlmMvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
 
+
     public class UyelerController : Controller
     {
         private readonly IUyelerManager manager;
 
+
         public UyelerController(IUyelerManager manager)
         {
             this.manager = manager;
+
+
         }
+        [HttpGet]
+
 
         [HttpGet]
         public IActionResult Login()
@@ -39,14 +45,15 @@ namespace FİlmMvc.Areas.Admin.Controllers
                     {
                         new Claim(ClaimTypes.Name,user.UserName),
                         new Claim(ClaimTypes.Email,user.Email),
-                        new Claim(ClaimTypes.Role,user.Role)
+                        new Claim(ClaimTypes.Role,user.Role),
+
                     };
 
                     var userIdentity = new ClaimsIdentity(claims, "login");
                     ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
                     await HttpContext.SignInAsync(principal);
 
-                    return RedirectToAction("Index", "Home", new { Area = "Admin" });
+                    return RedirectToAction("Index", "Home", new { Areas = "Admin" });
                 }
 
 
@@ -54,7 +61,6 @@ namespace FİlmMvc.Areas.Admin.Controllers
 
             return View(loginDTO);
         }
-
 
 
 

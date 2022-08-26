@@ -1,7 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Film.Entities;
+using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace FİlmMvc.Areas.Uye.Models.DTOs
 {
+    [Area("Uye")]
     public class UyeRegisterDTO
     {
 
@@ -32,7 +35,7 @@ namespace FİlmMvc.Areas.Uye.Models.DTOs
 
         [Required]
 
-        public string Adresler { get; set; }
+        public ICollection<Adres> Adresler { get; set; }
 
 
         [Required]

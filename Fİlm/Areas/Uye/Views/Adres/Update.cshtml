@@ -4,21 +4,22 @@
 
 <form asp-controller="Adres" asp-action="Update" method="post">
    
-    <div class="mb-3">
-      <label asp-for="Uyeler.Ad.this[@Context.User.Identity.Name]" class="form-label">Uye Adi</label>
-      <input type="text" class="form-control" asp-for="Uyeler.Ad.this[@Context.User.Identity.Name]">
-    </div>
-    @* <div class="mb-3">
-      <label asp-for="Uyeler.Email" class="form-label">Uye Email</label>
-      <input type="text" class="form-control" asp-for="Uyeler.Email">
-    </div>*@
-    <div class="mb-3">
-      <label asp-for="SehirId" class="form-label">Sehir Id</label>
-      <input type="text" class="form-control" asp-for="SehirId">
+   <div class="mb-3">
+      <label asp-for="AdSoyad" class="form-label">Ad Soyad</label>
+      <input type="text" class="form-control" asp-for="AdSoyad">
     </div>
     <div class="mb-3">
-      <label asp-for="IlceId" class="form-label">Ilce Id</label>
-      <input type="text" class="form-control" asp-for="IlceId">
+      <label asp-for="TcNo" class="form-label">Tc Kimlik</label>
+      <input type="text" class="form-control" asp-for="TcNo">
+    </div>
+    
+    <div class="mb-3">
+      <label asp-for="SehirAdi" class="form-label">Sehir Id</label>
+      <input type="text" class="form-control" asp-for="SehirAdi">
+    </div>
+    <div class="mb-3">
+      <label asp-for="SehirAdi" class="form-label">Ilce Id</label>
+      <input type="text" class="form-control" asp-for="SehirAdi">
     </div>
     <div class="mb-3">
       <label asp-for="CaddeSokak" class="form-label">CaddeSokak</label>

@@ -4,18 +4,16 @@
 
 <form asp-controller="Kategori" asp-action="Create" method="post">
    
-    <div class="mb-3">
-      <label asp-for="filmler" class="form-label">Film Adi</label>
-      <input type="text" class="form-control" asp-for="filmler">
-    </div>
-    <div class="mb-3">
+     <div class="mb-3">
       <label asp-for="KategoriAdi" class="form-label">Kategori Adi</label>
       <input type="text" class="form-control" asp-for="KategoriAdi">
     </div>
+
     <div class="mb-3">
-      <label asp-for="Aciklama" class="form-label">Aciklama</label>
-      <input type="text" class="form-control" asp-for="Aciklama">
+      <label asp-for="FilmAdi" class="form-label">Film Adi</label>
+      <input type="text" class="form-control" asp-for="FilmAdi">
     </div>
+   
    
 
      <button type="submit" class="btn btn-primary">Kaydet</button>

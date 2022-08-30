@@ -1,5 +1,4 @@
-﻿using Film.Entities;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 namespace FİlmMvc.Areas.Uye.Models.DTOs
@@ -33,9 +32,9 @@ namespace FİlmMvc.Areas.Uye.Models.DTOs
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Required]
+        //[Required]
 
-        public ICollection<Adres> Adresler { get; set; }
+        //public ICollection<Adres> Adresler { get; set; }
 
 
         [Required]

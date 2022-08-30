@@ -30,6 +30,10 @@ namespace Film.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("AdSoyad")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("AdresTip")
                         .HasColumnType("int");
 
@@ -46,16 +50,18 @@ namespace Film.DAL.Migrations
                     b.Property<int>("IcKapiNo")
                         .HasColumnType("int");
 
-                    b.Property<int>("IlceId")
-                        .HasColumnType("int");
+                    b.Property<string>("IlceAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("KargoId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SehirId")
-                        .HasColumnType("int");
+                    b.Property<string>("SehirAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UyeAdi")
+                    b.Property<string>("TcNo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -73,9 +79,11 @@ namespace Film.DAL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Aciklama")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AldigiOduller")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AltYazilari")
@@ -97,7 +105,11 @@ namespace Film.DAL.Migrations
                     b.Property<decimal>("Fiyat")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("KategoriId")
+                    b.Property<string>("KategoriAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("KategoriId")
                         .HasColumnType("int");
 
                     b.Property<string>("Oyuncular")
@@ -214,12 +226,12 @@ namespace Film.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Aciklama")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("FilmAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("KategoriAdi")
                         .IsRequired()
@@ -400,19 +412,15 @@ namespace Film.DAL.Migrations
 
             modelBuilder.Entity("Film.Entities.Filmler", b =>
                 {
-                    b.HasOne("Film.Entities.Kategori", "kategori")
+                    b.HasOne("Film.Entities.Kategori", null)
                         .WithMany("filmler")
-                        .HasForeignKey("KategoriId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("KategoriId");
 
                     b.HasOne("Film.Entities.Tedarikci", "Tedarikci")
                         .WithMany()
                         .HasForeignKey("TedarikciId");
 
                     b.Navigation("Tedarikci");
-
-                    b.Navigation("kategori");
                 });
 
             modelBuilder.Entity("Film.Entities.Ilce", b =>

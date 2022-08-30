@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FİlmMvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class TedarikciController : Controller
     {
         private readonly SqlDbContext context;

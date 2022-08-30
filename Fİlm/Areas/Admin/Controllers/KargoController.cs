@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FİlmMvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class KargoController : Controller
     {
         private readonly SqlDbContext context;
@@ -31,7 +31,7 @@ namespace FİlmMvc.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(Kargo kargo)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
 
                 context.Kargo.Add(kargo);

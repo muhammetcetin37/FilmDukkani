@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FİlmMvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class KategoriController : Controller
     {
         private readonly SqlDbContext context;
@@ -32,7 +32,7 @@ namespace FİlmMvc.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(Kategori kategori)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
 
                 context.Kategoriler.Add(kategori);

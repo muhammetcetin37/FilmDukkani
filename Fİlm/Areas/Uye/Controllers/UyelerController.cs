@@ -1,13 +1,13 @@
 ﻿using Film.BL.Abstract;
 using Film.Entities;
-using FİlmMvc.Areas.Admin.Models.DTOs;
+using FİlmMvc.Areas.Uye.Models.DTOs;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace FİlmMvc.Areas.Admin.Controllers
+namespace FİlmMvc.Areas.Uye.Controllers
 {
-    [Area("Admin")]
+    [Area("Uye")]
 
 
     public class UyelerController : Controller
@@ -21,9 +21,9 @@ namespace FİlmMvc.Areas.Admin.Controllers
 
 
         }
+        [HttpGet]
 
-
-
+        //[Authorize(Roles = "User")]
         [HttpGet]
         public IActionResult Login()
         {
@@ -53,7 +53,7 @@ namespace FİlmMvc.Areas.Admin.Controllers
                     ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
                     await HttpContext.SignInAsync(principal);
 
-                    return RedirectToAction("Index", "Home", new { Areas = "Admin" });
+                    return RedirectToAction("Index", "Home", new { Areas = "Uye" });
                 }
 
 
@@ -88,7 +88,7 @@ namespace FİlmMvc.Areas.Admin.Controllers
                 yeniKullanici.TcNo = dTO.TcNo;
                 yeniKullanici.Gsm = dTO.Gsm;
                 yeniKullanici.Password = dTO.Password;
-                yeniKullanici.Role = "Admin";
+                yeniKullanici.Role = "User";
                 yeniKullanici.UserName = dTO.UserName;
                 manager.Add(yeniKullanici);
                 return RedirectToAction("Login", "Uyeler");

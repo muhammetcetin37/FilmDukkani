@@ -5,6 +5,11 @@
 <form asp-controller="Filmler" asp-action="Create" method="post">
    
     <div class="mb-3">
+      <label asp-for="KategoriAdi" class="form-label">Kategori Adi</label>
+      <input type="text" class="form-control" asp-for="KategoriAdi">
+    </div>
+
+    <div class="mb-3">
       <label asp-for="FilmAdi" class="form-label">Film Adi</label>
       <input type="text" class="form-control" asp-for="FilmAdi">
     </div>
@@ -69,10 +74,7 @@
       <input type="text" class="form-control" asp-for="EklemeTarihi">
     </div>
 
-     <div class="mb-3">
-      <label asp-for="KategoriId" class="form-label">Kategori Adi</label>
-      <input type="text" class="form-control" asp-for="KategoriId">
-    </div>
+   
 
 
    

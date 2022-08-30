@@ -7,10 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Uye\Views\Uyelerrr\**" />
     <Compile Remove="Views\Uyeler\**" />
+    <Content Remove="Areas\Uye\Views\Uyelerrr\**" />
     <Content Remove="Views\Uyeler\**" />
+    <EmbeddedResource Remove="Areas\Uye\Views\Uyelerrr\**" />
     <EmbeddedResource Remove="Views\Uyeler\**" />
+    <None Remove="Areas\Uye\Views\Uyelerrr\**" />
     <None Remove="Views\Uyeler\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Uye\Controllers\UyelerrrController.cs" />
+    <Compile Remove="Areas\Uye\Models\DTOs\UyeDTO.cs" />
+    <Compile Remove="Areas\Uye\Models\DTOs\UyeRegisterDTO.cs" />
   </ItemGroup>
 
   <ItemGroup>

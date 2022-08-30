@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace FİlmMvc.Areas.Admin.Models.DTOs
+namespace FİlmMvc.Areas.Uye.Models.DTOs
 {
-    [Area("Admin")]
+    [Area("Uye")]
     public class RegisterDTO
     {
 

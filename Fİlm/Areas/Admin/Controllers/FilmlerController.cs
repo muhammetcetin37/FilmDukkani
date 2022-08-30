@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FİlmMvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class FilmlerController : Controller
     {
         private readonly SqlDbContext context;
@@ -31,7 +31,7 @@ namespace FİlmMvc.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(Filmler filmler)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
 
                 context.Filmler.Add(filmler);

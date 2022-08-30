@@ -1,22 +1,18 @@
 ﻿@model Kategori
 
 <form asp-controller="Kategori" asp-action="Delete" method="post">
-  <div class="mb-3">
-      <label asp-for="filmler" class="form-label">@Model.filmler</label>
-        <input type="text" class="form-control" asp-for="filmler" readonly>
-    </div>
-
+    <input type="hidden" asp-for="Id" />
+ 
     <div class="mb-3">
       <label asp-for="KategoriAdi" class="form-label">@Model.KategoriAdi</label>
         <input type="text" class="form-control" asp-for="KategoriAdi" readonly>
     </div>
 
-    <input type="hidden" asp-for="Id" />
-    <div class="mb-3">
-      <label asp-for="Aciklama" class="form-label">@Model.Aciklama</label>
-       <input type="text" class="form-control" asp-for="Aciklama" readonly>
-  
-    </div>
+  <div class="mb-3">
+      <label asp-for="FilmAdi" class="form-label">@Model.FilmAdi</label>
+        <input type="text" class="form-control" asp-for="FilmAdi" readonly>
+    </div>   
+    
 
     <button type="submit" class="btn btn-danger">Sil</button>
 

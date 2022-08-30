@@ -16,13 +16,14 @@ namespace Film.DAL.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     AdresTip = table.Column<int>(type: "int", nullable: false),
-                    SehirId = table.Column<int>(type: "int", nullable: false),
-                    IlceId = table.Column<int>(type: "int", nullable: false),
+                    SehirAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IlceAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CaddeSokak = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DısKapiNo = table.Column<int>(type: "int", nullable: false),
                     IcKapiNo = table.Column<int>(type: "int", nullable: false),
                     KargoId = table.Column<int>(type: "int", nullable: false),
-                    UyeAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AdSoyad = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TcNo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -69,7 +70,7 @@ namespace Film.DAL.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     KategoriAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FilmAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -195,19 +196,20 @@ namespace Film.DAL.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FilmAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Yonetmen = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Oyuncular = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TeknikOzellikler = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     YapimYili = table.Column<DateTime>(type: "datetime2", nullable: false),
                     SesOzellikleri = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AltYazilari = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AldigiOduller = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AldigiOduller = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BarkodNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TedarikciId = table.Column<int>(type: "int", nullable: true),
                     Fiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     EklemeTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    KategoriId = table.Column<int>(type: "int", nullable: false),
+                    KategoriAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    KategoriId = table.Column<int>(type: "int", nullable: true),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -217,8 +219,7 @@ namespace Film.DAL.Migrations
                         name: "FK_Filmler_Kategoriler_KategoriId",
                         column: x => x.KategoriId,
                         principalTable: "Kategoriler",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Filmler_Tedarikciler_TedarikciId",
                         column: x => x.TedarikciId,

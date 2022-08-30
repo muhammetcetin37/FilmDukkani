@@ -6,9 +6,10 @@
     <thead>
         <tr>
             <td>@Html.DisplayNameFor(p=>p.Id)</td>
-            <td>@Html.DisplayNameFor(p=>p.filmler)</td>
             <td>@Html.DisplayNameFor(p=>p.KategoriAdi)</td>
-            <td>@Html.DisplayNameFor(p=>p.Aciklama)</td>
+            <td>@Html.DisplayNameFor(p=>p.FilmAdi)</td>
+            
+            
             
 
             <td></td>
@@ -19,9 +20,10 @@
         {
             <tr>
                 <td>@item.Id</td>
-                <td>@item.filmler</td>
                 <td>@item.KategoriAdi</td>
-                <td>@item.Aciklama</td>
+                <td>@item.FilmAdi</td>
+                
+                
                 
                 <td>
                     <a class="btn btn-danger" asp-action="Delete" asp-controller="Kategori" asp-route-id="@item.Id">Sil</a>

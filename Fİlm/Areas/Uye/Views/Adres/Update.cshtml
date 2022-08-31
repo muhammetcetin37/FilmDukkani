@@ -13,14 +13,20 @@
       <input type="text" class="form-control" asp-for="TcNo">
     </div>
     
-    <div class="mb-3">
-      <label asp-for="SehirId" class="form-label">Sehir Id</label>
-      <input type="text" class="form-control" asp-for="SehirId">
-    </div>
-    <div class="mb-3">
-      <label asp-for="IlceId" class="form-label">Ilce Id</label>
-      <input type="text" class="form-control" asp-for="IlceId">
-    </div>
+    <div class="form-group">
+          <label asp-for="SehirId" class="control-label">Sehir</label>
+          <select asp-for="SehirId" id="sehirlerCombo">
+          <option>Seciniz</option>
+          </select>
+                        
+     </div>
+     <div class="form-group">
+          <label asp-for="IlceId" class="control-label">Ilce</label>
+          <select asp-for="IlceId" id="ilcelerCombo">
+          <option>Seciniz</option>
+          </select>
+                        
+     </div>
     <div class="mb-3">
       <label asp-for="CaddeSokak" class="form-label">CaddeSokak</label>
       <input type="text" class="form-control" asp-for="CaddeSokak">
@@ -44,3 +50,44 @@
     <a class="btn btn-info" asp-action="Index" asp-controller="Adres">Listeye Geri Dön</a>
 
 </form>
+@section Scripts
+{
+    <script type="text/javascript">
+    
+    $(document).ready(function() {    // Bütün Dokuman yuklendikten conra aşagidaki kodlar calissin.
+       
+        var sehirlerUrl = "http://localhost:5073/api/Sehir";
+        
+        $.ajax({
+            url: sehirlerUrl,
+            type: 'GET',
+            dataType: 'json',
+            success: function(result) {
+                for (let key in result) {
+                    $("#sehirlerCombo")
+                    .append("<option value=" + result[key].id + ">" + result[key].sehirAdi + "</option>");
+                }
+            }
+        });//Ajax
+        //SehirlerCombo degisklik oldugunda yapilacaklar
+        $("#sehirlerCombo").change(function() {
+            var sehirId = $(this).find(":selected").val();
+            var ilceUrl = "http://localhost:5073/api/Ilce?sehirId=" + sehirId;
+            $.ajax({
+            url: ilceUrl,
+            type: 'GET',
+            dataType: 'json',
+            success: function(result) {
+                console.log(result);
+                $("#ilcelerCombo").children().remove();
+                for (let key in result) {
+                    $("#ilcelerCombo")
+                    .append("<option value=" + result[key].id + ">" + result[key].ilceAdi + "</option>");
+                }
+            }
+        });//Ajax
+        });
+    })
+       
+    </script>
+}

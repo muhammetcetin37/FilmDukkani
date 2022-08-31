@@ -21,10 +21,10 @@ namespace Film.DAL.Contexts
         public DbSet<Adres> Adresler { get; set; }
         public DbSet<Filmler> Filmler { get; set; }
         public DbSet<FilmlerKategori> FilmlerKategori { get; set; }
-        public DbSet<Ilce> Ilceler { get; set; }
+        //public DbSet<Ilce> Ilceler { get; set; }
         public DbSet<Kategori> Kategoriler { get; set; }
         public DbSet<Paket> Paketler { get; set; }
-        public DbSet<Sehir> Sehirler { get; set; }
+        //public DbSet<Sehir> Sehirler { get; set; }
         public DbSet<Tedarikci> Tedarikciler { get; set; }
         public DbSet<Uyeler> Uyeler { get; set; }
         public DbSet<Sepet> Sepet { get; set; }

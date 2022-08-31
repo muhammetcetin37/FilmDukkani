@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FİlmMvc", "Fİlm\FİlmMvc.csproj", "{D86F9F60-140B-4A10-B50B-E787AE8BCC86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FİlmMvc", "Fİlm\FİlmMvc.csproj", "{D86F9F60-140B-4A10-B50B-E787AE8BCC86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Film.Entities", "Film.Entities\Film.Entities.csproj", "{9E7D21C5-A160-400B-A28C-1F3DE321EDFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Film.Entities", "Film.Entities\Film.Entities.csproj", "{9E7D21C5-A160-400B-A28C-1F3DE321EDFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Film.DAL", "Film.DAL\Film.DAL.csproj", "{8FB91054-2F6F-4483-86D3-969847D048C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Film.DAL", "Film.DAL\Film.DAL.csproj", "{8FB91054-2F6F-4483-86D3-969847D048C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Film.BL", "Film.BL\Film.BL.csproj", "{F7B70247-2FCC-4CA5-8AF6-52918F7D84EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Film.BL", "Film.BL\Film.BL.csproj", "{F7B70247-2FCC-4CA5-8AF6-52918F7D84EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "httpstatus", "httpstatus\httpstatus.csproj", "{061E1FD1-EB94-4EF3-BEBF-CAF978CBE29D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F7B70247-2FCC-4CA5-8AF6-52918F7D84EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7B70247-2FCC-4CA5-8AF6-52918F7D84EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7B70247-2FCC-4CA5-8AF6-52918F7D84EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{061E1FD1-EB94-4EF3-BEBF-CAF978CBE29D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{061E1FD1-EB94-4EF3-BEBF-CAF978CBE29D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{061E1FD1-EB94-4EF3-BEBF-CAF978CBE29D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{061E1FD1-EB94-4EF3-BEBF-CAF978CBE29D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

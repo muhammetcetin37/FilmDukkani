@@ -96,20 +96,6 @@ namespace Film.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Sehirler",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SehirAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Sehirler", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Sepet",
                 columns: table => new
                 {
@@ -169,27 +155,6 @@ namespace Film.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Ilceler",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IlceAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SehirId = table.Column<int>(type: "int", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Ilceler", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Ilceler_Sehirler_SehirId",
-                        column: x => x.SehirId,
-                        principalTable: "Sehirler",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Filmler",
                 columns: table => new
                 {
@@ -238,11 +203,6 @@ namespace Film.DAL.Migrations
                 column: "TedarikciId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Ilceler_SehirId",
-                table: "Ilceler",
-                column: "SehirId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Uyeler_AdresId",
                 table: "Uyeler",
                 column: "AdresId");
@@ -255,9 +215,6 @@ namespace Film.DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "FilmlerKategori");
-
-            migrationBuilder.DropTable(
-                name: "Ilceler");
 
             migrationBuilder.DropTable(
                 name: "Kargo");
@@ -276,9 +233,6 @@ namespace Film.DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "Tedarikciler");
-
-            migrationBuilder.DropTable(
-                name: "Sehirler");
 
             migrationBuilder.DropTable(
                 name: "Adresler");

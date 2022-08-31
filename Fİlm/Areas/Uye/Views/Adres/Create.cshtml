@@ -13,16 +13,31 @@
       <label asp-for="TcNo" class="form-label">Tc Kimlik</label>
       <input type="text" class="form-control" asp-for="TcNo">
     </div>
+
+     <div class="form-group">
+          <label asp-for="SehirId" class="control-label">Sehir</label>
+          <select asp-for="SehirId" id="sehirlerCombo">
+          <option>Seciniz</option>
+          </select>
+                        
+     </div>
+     <div class="form-group">
+          <label asp-for="IlceId" class="control-label">Ilce</label>
+          <select asp-for="IlceId" id="ilcelerCombo">
+          <option>Seciniz</option>
+          </select>
+                        
+     </div>
    
-    <div class="mb-3">
+   @* <div class="mb-3">
       <label asp-for="SehirAdi" class="form-label">Sehir Adi</label>
       <input type="text" class="form-control" asp-for="SehirAdi">
-    </div>
+    </div>*@
    
-    <div class="mb-3">
+    @*<div class="mb-3">
       <label asp-for="IlceAdi" class="form-label">Ilce Adi</label>
       <input type="text" class="form-control" asp-for="IlceAdi">
-    </div>
+    </div>*@
     <div class="mb-3">
       <label asp-for="CaddeSokak" class="form-label">CaddeSokak</label>
       <input type="text" class="form-control" asp-for="CaddeSokak">
@@ -53,7 +68,7 @@
     
     $(document).ready(function() {    // Bütün Dokuman yuklendikten conra aşagidaki kodlar calissin.
        
-        var sehirlerUrl = "http://localhost:5163/Admin/Sehir";
+        var sehirlerUrl = "http://localhost:5073/api/Sehir";
         
         $.ajax({
             url: sehirlerUrl,
@@ -63,15 +78,13 @@
                 for (let key in result) {
                     $("#sehirlerCombo")
                     .append("<option value=" + result[key].id + ">" + result[key].sehirAdi + "</option>");
-
                 }
             }
         });//Ajax
-
         //SehirlerCombo degisklik oldugunda yapilacaklar
         $("#sehirlerCombo").change(function() {
             var sehirId = $(this).find(":selected").val();
-            var ilceUrl = "http://localhost:5163/Admin/Ilce" + sehirId;
+            var ilceUrl = "http://localhost:5073/api/Ilce?sehirId=" + sehirId;
             $.ajax({
             url: ilceUrl,
             type: 'GET',
@@ -82,13 +95,10 @@
                 for (let key in result) {
                     $("#ilcelerCombo")
                     .append("<option value=" + result[key].id + ">" + result[key].ilceAdi + "</option>");
-
                 }
             }
         });//Ajax
-
         });
-
     })
        
     </script>

@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Ilce.cs" />
+    <Compile Remove="Sehir.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\httpstatus\httpstatus.csproj" />
+  </ItemGroup>
+
 </Project>

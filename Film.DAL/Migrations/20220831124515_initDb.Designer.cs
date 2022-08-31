@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Film.DAL.Migrations
 {
     [DbContext(typeof(SqlDbContext))]
-    [Migration("20220830132206_initDb")]
+    [Migration("20220831124515_initDb")]
     partial class initDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -171,31 +171,6 @@ namespace Film.DAL.Migrations
                     b.ToTable("FilmlerKategori");
                 });
 
-            modelBuilder.Entity("Film.Entities.Ilce", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("IlceAdi")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("SehirId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SehirId");
-
-                    b.ToTable("Ilceler");
-                });
-
             modelBuilder.Entity("Film.Entities.Kargo", b =>
                 {
                     b.Property<int>("Id")
@@ -272,26 +247,6 @@ namespace Film.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Paketler");
-                });
-
-            modelBuilder.Entity("Film.Entities.Sehir", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("SehirAdi")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Sehirler");
                 });
 
             modelBuilder.Entity("Film.Entities.Sepet", b =>
@@ -413,17 +368,6 @@ namespace Film.DAL.Migrations
                     b.Navigation("Tedarikci");
                 });
 
-            modelBuilder.Entity("Film.Entities.Ilce", b =>
-                {
-                    b.HasOne("Film.Entities.Sehir", "Sehir")
-                        .WithMany("Ilce")
-                        .HasForeignKey("SehirId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Sehir");
-                });
-
             modelBuilder.Entity("Film.Entities.Uyeler", b =>
                 {
                     b.HasOne("Film.Entities.Adres", null)
@@ -439,11 +383,6 @@ namespace Film.DAL.Migrations
             modelBuilder.Entity("Film.Entities.Kategori", b =>
                 {
                     b.Navigation("filmler");
-                });
-
-            modelBuilder.Entity("Film.Entities.Sehir", b =>
-                {
-                    b.Navigation("Ilce");
                 });
 #pragma warning restore 612, 618
         }

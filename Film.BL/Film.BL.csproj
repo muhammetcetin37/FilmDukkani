@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Abstract\IilceManager.cs" />
+    <Compile Remove="Abstract\ISehirManager.cs" />
+    <Compile Remove="Concrete\IlceManager.cs" />
+    <Compile Remove="Concrete\SehirManager.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Film.DAL\Film.DAL.csproj" />
     <ProjectReference Include="..\Film.Entities\Film.Entities.csproj" />
   </ItemGroup>

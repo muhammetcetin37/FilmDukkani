@@ -7,17 +7,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Admin\Views\Ilce\**" />
+    <Compile Remove="Areas\Admin\Views\Sehir\**" />
     <Compile Remove="Areas\Uye\Views\Uyelerrr\**" />
     <Compile Remove="Views\Uyeler\**" />
+    <Content Remove="Areas\Admin\Views\Ilce\**" />
+    <Content Remove="Areas\Admin\Views\Sehir\**" />
     <Content Remove="Areas\Uye\Views\Uyelerrr\**" />
     <Content Remove="Views\Uyeler\**" />
+    <EmbeddedResource Remove="Areas\Admin\Views\Ilce\**" />
+    <EmbeddedResource Remove="Areas\Admin\Views\Sehir\**" />
     <EmbeddedResource Remove="Areas\Uye\Views\Uyelerrr\**" />
     <EmbeddedResource Remove="Views\Uyeler\**" />
+    <None Remove="Areas\Admin\Views\Ilce\**" />
+    <None Remove="Areas\Admin\Views\Sehir\**" />
     <None Remove="Areas\Uye\Views\Uyelerrr\**" />
     <None Remove="Views\Uyeler\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Admin\Controllers\IlceController.cs" />
+    <Compile Remove="Areas\Admin\Controllers\SehirController.cs" />
+    <Compile Remove="Areas\Uye\Controllers\IlceController.cs" />
+    <Compile Remove="Areas\Uye\Controllers\SehirController.cs" />
     <Compile Remove="Areas\Uye\Controllers\UyelerrrController.cs" />
     <Compile Remove="Areas\Uye\Models\DTOs\UyeDTO.cs" />
     <Compile Remove="Areas\Uye\Models\DTOs\UyeRegisterDTO.cs" />
@@ -32,6 +44,7 @@
     <ProjectReference Include="..\Film.BL\Film.BL.csproj" />
     <ProjectReference Include="..\Film.DAL\Film.DAL.csproj" />
     <ProjectReference Include="..\Film.Entities\Film.Entities.csproj" />
+    <ProjectReference Include="..\httpstatus\httpstatus.csproj" />
   </ItemGroup>
 
   <ItemGroup>

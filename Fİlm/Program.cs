@@ -1,7 +1,10 @@
-using Film.BL.Abstract;
+﻿using Film.BL.Abstract;
 using Film.BL.Concrete;
 using Film.DAL.Contexts;
+using FİlmMvc.Infrastructure.Contexts;
+using FİlmMvc.Models.Entities;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +15,24 @@ builder.Services.AddControllersWithViews();
 builder.Services
     .AddDbContext<SqlDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("FilmDukkani")));
+
+builder.Services
+    .AddDbContext<SqlContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("FilmDukkani")));
+
+builder.Services.AddIdentity<AppUser, IdentityRole>(x =>
+{
+    x.SignIn.RequireConfirmedPhoneNumber = false;
+    x.SignIn.RequireConfirmedEmail = false;
+    x.SignIn.RequireConfirmedAccount = false;
+
+    x.Password.RequiredLength = 3;
+    x.Password.RequireUppercase = false;
+    x.Password.RequireNonAlphanumeric = false;
+    x.Password.RequiredUniqueChars = 0;
+    x.Password.RequireLowercase = false;
+
+}).AddEntityFrameworkStores<SqlContext>().AddDefaultTokenProviders();
 
 builder.Services.AddScoped<IKategoriManager, KategoriManager>();
 builder.Services.AddScoped<IUyelerManager, UyelerManager>();

@@ -1,53 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace FİlmMvc.Areas.Admin.Models.DTOs
 {
-    [Area("Admin")]
     public class RegisterDTO
     {
-
-        [Required]
-        public string Ad { get; set; }
-
-
-        [Required]
-        public string Soyad { get; set; }
-
-        [Required]
+        [Required(ErrorMessage = "UserName alani zorunludur")]
+        [Display(Name = "User Name")]
+        [MinLength(2, ErrorMessage = "UserName alani en az 2 karakter olmalidir")]
         public string UserName { get; set; }
 
-        [Required]
-        [MinLength(11, ErrorMessage = "TcNo Alani En Az 11 Karakter Olmalidir.")]
-        [MaxLength(15)]
-        public string TcNo { get; set; }
-
-        [Required]
-        [MinLength(10, ErrorMessage = "Gsm Alani En Az 10 Karakter Olmalidir.")]
-        [MaxLength(14, ErrorMessage = "Gsm Alani 11 Karakterden Fazla olmamalidir.")]
-        public string Gsm { get; set; }
-
-
-        [Required]
-        [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "Email alani zorunludur")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "email adresini yanliş giridiniz")]
+        [Display(Name = "Email Address")]
         public string Email { get; set; }
 
-        //[Required]
-
-        //public string Adresler { get; set; }
-
-
-        [Required]
+        [Required(ErrorMessage = "Şifre alani zorunludur")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        [Display(Name = "TcKimlik No")]
+        public string TcNo { get; set; }
 
-
-        [Required]
-        [DataType(DataType.Password)]
-        [Compare("Password")]
-        public string RePassword { get; set; }
-
-        public bool IAgree { get; set; }
     }
 }

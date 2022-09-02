@@ -3,86 +3,115 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - FilmDukkani</title>
+    <title>@ViewData["Title"] - Film Dukkani</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-         <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
-     <link rel="stylesheet" href="~/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <link rel="stylesheet" href="~/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-       <link rel="stylesheet" href="~/dist/css/adminlte.min.css">
-
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Fİlm.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AuthenticationAndAuthorization.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Film Dukkani</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="color:#ff0000; font-weight: bold;">Film Dukkani</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" >
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+                            <a class="nav-link text-dark"  style="color:#000000; font-weight: bold;" asp-area="Admin" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
                         </li>
+                      
+                        @{
+                            if (User.Identity.IsAuthenticated == true)
+                            {
+                                @if (User.IsInRole("User"))
+                              {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Uye" asp-controller="Filmler" asp-action="Index" >Filmler</a>
+                                    </li>
 
-                         @{
-                            if (Context.User.Identity.IsAuthenticated) // Burasi cookie ile oturum acilmismi onu kontrol eder
-                            { 
+                                //<li class="nav-item" >
+                                //    <a class="nav-link text-dark" style="color:#000000; font-weight: bold;"  asp-area="Uye" asp-controller="Sepet" asp-action="Index">Sepet</a>
+                                //</li>
 
-                               <li class="nav-item">
-                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Filmler" asp-action="Index">Filmler</a>
-                               </li>
-
-                               <li class="nav-item">
-                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Kategori" asp-action="Index">Kategori</a>
-                               </li>
-
-                               <li class="nav-item">
-                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Tedarikci" asp-action="Index">Tedarikci</a>
-                               </li>
-
-                               <li class="nav-item">
-                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Paket" asp-action="Index">Paket</a>
-                               </li>
-
-                               <li class="nav-item">
-                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Adres" asp-action="Index">Adresler</a>
-                               </li>
-
+                                <li class="nav-item" >
+                                    <a class="nav-link text-dark" style="color:#000000; font-weight: bold;"  asp-area="Uye" asp-controller="Adres" asp-action="Index">Adres</a>
+                                </li>
 
 
                                 <li class="nav-item">
-                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Sepet" asp-action="Index">Sepet</a>
-                               </li>
-
-                               <li class="nav-item">
-                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="FilmlerKategori" asp-action="Index">FilmlerKategori</a>
-                               </li> 
-
-                               <li class="nav-item">
-                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Kargo" asp-action="Index">Kargo</a>
-                               </li> 
-
-                               <li class="nav-item">
-                                 <a  class="nav-link text-dark" asp-area="" asp-controller="Uyeler" asp-action="Logout">Logout</a>
-                               </li>
-                         
-                            } 
-                            else
+                                    <a class="nav-link text-dark" style="color:#000000; font-weight: bold;"  asp-area="Admin"  asp-controller="Account" asp-action="Edit">Profil Düzenle</a>
+                                </li>
+                                <li class="nav-item"> 
+                                    <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Admin"  asp-controller="Account"  asp-action="Logout">Çıkış</a>
+                                </li>
+                              }
+                            @if (User.IsInRole("admin"))
                             { 
-                              <li class="nav-item">
-                                   <a class="nav-link text-dark" asp-area="Admin" asp-controller="Uyeler" asp-action="Login">Admin</a>
-                              </li>
+                                      <li class="nav-item">
+                                     <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Admin" asp-controller="Filmler" asp-action="Index">Filmler</a>
+                                   </li>
+
+                                    <li class="nav-item">
+                                     <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Admin" asp-controller="Kategori" asp-action="Index">Kategori</a>
+                                   </li>
+
+                                   <li class="nav-item">
+                                     <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Admin" asp-controller="Tedarikci" asp-action="Index">Tedarikci</a>
+                                   </li>
+
+                                   <li class="nav-item">
+                                     <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Admin" asp-controller="Paket" asp-action="Index">Paket</a>
+                                   </li>
+
+                                   <li class="nav-item">
+                                     <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Admin" asp-controller="Adres" asp-action="Index">Adresler</a>
+                                   </li>
+
+
+                                    <li class="nav-item">
+                                     <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Admin" asp-controller="Sepet" asp-action="Index">Sepet</a>
+                                   </li>
+
+                                   <li class="nav-item">
+                                     <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Admin" asp-controller="FilmlerKategori" asp-action="Index">FilmlerKategori</a>
+                                   </li> 
+
+                                   <li class="nav-item">
+                                     <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Admin" asp-controller="Kargo" asp-action="Index">Kargo</a>
+                                   </li> 
+                             <li class="nav-item">
+                                    <a class="nav-link text-dark" style="color:#000000; font-weight: bold;"  asp-area="Admin"  asp-controller="Account" asp-action="Edit">Profil Düzenle</a>
+                                </li>
+                            
+                                <li class="nav-item">
+                                        <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Admin"  asp-controller="Role"  asp-action="Index">Role Managetment</a>
+                                </li>
+                             <li class="nav-item"> 
+                                     <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Admin"  asp-controller="Account"  asp-action="Logout">Çıkış</a>
+                                </li>
+                            }
+                                 @if (User.IsInRole("manager"))
+                            { 
+                            
+                                <li class="nav-item">
+                                        <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="" asp-controller="Home"  asp-action="Privacy">Privacy</a>
+                                </li>
+                            
                             }
 
-                            
-                         }
-                       
-                           
+                        }else
+                        {
+                                 <li class="nav-item">
+                                      <a class="nav-link text-dark" style="color:#000000; font-weight: bold;"  asp-area="Admin" asp-controller="Account" asp-action="Login">Login</a>
+                                 </li>
+                                 <li class="nav-item">
+                                      <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Admin"  asp-controller="Account"  asp-action="Register">Register</a>
+                                 </li>
+                        }
+                        }
                     </ul>
                 </div>
             </div>
@@ -96,12 +125,11 @@
 
     <footer class="border-top footer text-muted" style="position: absolute; bottom:0; width: 500px; margin: 0 auto;">
         <div class="container">
-            &copy; 2022 - Fİlm - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - Fİlm -
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/dist/js/adminlte.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

@@ -26,7 +26,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between"  >
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item" style="color:#000000; font-weight: bold;">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="color:#000000; font-weight: bold;" >Ana Sayfa</a>
+                            <a class="nav-link text-dark" asp-area="Uye" asp-controller="Home" asp-action="Index" style="color:#000000; font-weight: bold;" >Ana Sayfa</a>
                         </li>
 
                       @{
@@ -38,9 +38,9 @@
                                 <a class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Uye" asp-controller="Filmler" asp-action="Index" >Filmler</a>
                               </li>
 
-                               <li class="nav-item" >
-                                <a class="nav-link text-dark" style="color:#000000; font-weight: bold;"  asp-area="Uye" asp-controller="Sepet" asp-action="Index">Sepet</a>
-                              </li>
+                              // <li class="nav-item" >
+                              //  <a class="nav-link text-dark" style="color:#000000; font-weight: bold;"  asp-area="Uye" asp-controller="Sepet" asp-action="Index">Sepet</a>
+                              //</li>
 
                                <li class="nav-item" >
                                 <a class="nav-link text-dark" style="color:#000000; font-weight: bold;"  asp-area="Uye" asp-controller="Adres" asp-action="Index">Adres</a>
@@ -49,7 +49,7 @@
                       
 
                               <li class="nav-item">
-                                 <a  class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="" asp-controller="Uyeler" asp-action="Logout">Logout</a>
+                                 <a  class="nav-link text-dark" style="color:#000000; font-weight: bold;" asp-area="Admin" asp-controller="Account" asp-action="Logout">Çıkış</a>
                               </li>
                         
                             } 

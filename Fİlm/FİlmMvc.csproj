@@ -9,34 +9,59 @@
   <ItemGroup>
     <Compile Remove="Areas\Admin\Views\Ilce\**" />
     <Compile Remove="Areas\Admin\Views\Sehir\**" />
+    <Compile Remove="Areas\Admin\Views\Sepet\**" />
+    <Compile Remove="Areas\Uye\Models\DTOs\**" />
+    <Compile Remove="Areas\Uye\SqlScript\**" />
+    <Compile Remove="Areas\Uye\Views\Sepet\**" />
     <Compile Remove="Areas\Uye\Views\Uyelerrr\**" />
-    <Compile Remove="Views\Uyeler\**" />
+    <Compile Remove="Areas\Uye\Views\Uyeler\**" />
     <Content Remove="Areas\Admin\Views\Ilce\**" />
     <Content Remove="Areas\Admin\Views\Sehir\**" />
+    <Content Remove="Areas\Admin\Views\Sepet\**" />
+    <Content Remove="Areas\Uye\Models\DTOs\**" />
+    <Content Remove="Areas\Uye\SqlScript\**" />
+    <Content Remove="Areas\Uye\Views\Sepet\**" />
     <Content Remove="Areas\Uye\Views\Uyelerrr\**" />
-    <Content Remove="Views\Uyeler\**" />
+    <Content Remove="Areas\Uye\Views\Uyeler\**" />
     <EmbeddedResource Remove="Areas\Admin\Views\Ilce\**" />
     <EmbeddedResource Remove="Areas\Admin\Views\Sehir\**" />
+    <EmbeddedResource Remove="Areas\Admin\Views\Sepet\**" />
+    <EmbeddedResource Remove="Areas\Uye\Models\DTOs\**" />
+    <EmbeddedResource Remove="Areas\Uye\SqlScript\**" />
+    <EmbeddedResource Remove="Areas\Uye\Views\Sepet\**" />
     <EmbeddedResource Remove="Areas\Uye\Views\Uyelerrr\**" />
-    <EmbeddedResource Remove="Views\Uyeler\**" />
+    <EmbeddedResource Remove="Areas\Uye\Views\Uyeler\**" />
     <None Remove="Areas\Admin\Views\Ilce\**" />
     <None Remove="Areas\Admin\Views\Sehir\**" />
+    <None Remove="Areas\Admin\Views\Sepet\**" />
+    <None Remove="Areas\Uye\Models\DTOs\**" />
+    <None Remove="Areas\Uye\SqlScript\**" />
+    <None Remove="Areas\Uye\Views\Sepet\**" />
     <None Remove="Areas\Uye\Views\Uyelerrr\**" />
-    <None Remove="Views\Uyeler\**" />
+    <None Remove="Areas\Uye\Views\Uyeler\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Areas\Admin\Controllers\IlceController.cs" />
     <Compile Remove="Areas\Admin\Controllers\SehirController.cs" />
+    <Compile Remove="Areas\Admin\Controllers\SepetController.cs" />
+    <Compile Remove="Areas\Admin\Controllers\UyelerController.cs" />
     <Compile Remove="Areas\Uye\Controllers\IlceController.cs" />
     <Compile Remove="Areas\Uye\Controllers\SehirController.cs" />
+    <Compile Remove="Areas\Uye\Controllers\SepetController.cs" />
+    <Compile Remove="Areas\Uye\Controllers\UyelerController.cs" />
     <Compile Remove="Areas\Uye\Controllers\UyelerrrController.cs" />
-    <Compile Remove="Areas\Uye\Models\DTOs\UyeDTO.cs" />
-    <Compile Remove="Areas\Uye\Models\DTOs\UyeRegisterDTO.cs" />
+    <Compile Remove="Areas\Uye\Models\Kaydet.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
   </ItemGroup>
 
@@ -50,9 +75,12 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Uye\Data\" />
+    <Folder Include="Areas\Uye\Models\" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Uyeler\Login.cshtml" />
+    <None Include="Views\Uyeler\Register.cshtml" />
     <None Include="wwwroot\js\site.js" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />

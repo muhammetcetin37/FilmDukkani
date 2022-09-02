@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FİlmMvc.Areas.Uye.Controllers
 {
     [Area("Uye")]
-    [Authorize]
+    [Authorize(Roles = "User")]
     public class AdresController : Controller
     {
         private readonly SqlDbContext context;

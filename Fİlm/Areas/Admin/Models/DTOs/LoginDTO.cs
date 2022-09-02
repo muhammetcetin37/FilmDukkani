@@ -1,23 +1,18 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace FİlmMvc.Areas.Admin.Models.DTOs
 {
-    [Area("Admin")]
-    [Authorize]
     public class LoginDTO
     {
+        [Required(ErrorMessage = "UserName alani zorunludur")]
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
 
-        [Required]
-        [MinLength(5, ErrorMessage = "Email Alani en az 5 karakter olmalidir")]
-        [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
-
-
-        [Required]
-        [DataType(DataType.Password)]// şifreyi noktalı bir şekilde çıkartmaya yarıyor
+        [Required(ErrorMessage = "Password alani zorunludur")]
+        [Display(Name = "Password")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
-        public bool RememberMe { get; set; }
+
+        public string? ReturnUrl { get; set; }
     }
 }

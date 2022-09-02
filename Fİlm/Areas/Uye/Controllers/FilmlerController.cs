@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FİlmMvc.Areas.Uye.Controllers
 {
     [Area("Uye")]
-    [Authorize]
+    [Authorize(Roles = "User")]
     public class FilmlerController : Controller
     {
         private readonly SqlDbContext context;

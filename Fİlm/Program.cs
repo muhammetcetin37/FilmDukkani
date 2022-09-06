@@ -42,7 +42,7 @@ builder.Services.AddScoped<IAdresManager, AdresManager>();
 //builder.Services.AddScoped<ISehirManager, SehirManager>();
 //builder.Services.AddScoped<IilceManager, IlceManager>();
 builder.Services.AddScoped<IPaketManager, PaketManager>();
-builder.Services.AddScoped<ISepetManager, SepetManager>();
+//builder.Services.AddScoped<ISepetManager, SepetManager>();
 builder.Services.AddScoped<IFilmlerKategoriManager, FilmlerKategoriManager>();
 builder.Services.AddScoped<IKargoManager, KargoManager>();
 

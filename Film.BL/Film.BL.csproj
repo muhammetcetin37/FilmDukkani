@@ -9,8 +9,10 @@
   <ItemGroup>
     <Compile Remove="Abstract\IilceManager.cs" />
     <Compile Remove="Abstract\ISehirManager.cs" />
+    <Compile Remove="Abstract\ISepetManager.cs" />
     <Compile Remove="Concrete\IlceManager.cs" />
     <Compile Remove="Concrete\SehirManager.cs" />
+    <Compile Remove="Concrete\SepetManager.cs" />
   </ItemGroup>
 
   <ItemGroup>

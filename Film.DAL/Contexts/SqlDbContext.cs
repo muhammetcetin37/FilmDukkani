@@ -27,7 +27,7 @@ namespace Film.DAL.Contexts
         //public DbSet<Sehir> Sehirler { get; set; }
         public DbSet<Tedarikci> Tedarikciler { get; set; }
         public DbSet<Uyeler> Uyeler { get; set; }
-        public DbSet<Sepet> Sepet { get; set; }
+        //public DbSet<Sepet> Sepet { get; set; }
         public DbSet<Kargo> Kargo { get; set; }
 
 

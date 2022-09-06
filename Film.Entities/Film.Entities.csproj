@@ -9,6 +9,7 @@
   <ItemGroup>
     <Compile Remove="Ilce.cs" />
     <Compile Remove="Sehir.cs" />
+    <Compile Remove="Sepet.cs" />
   </ItemGroup>
 
   <ItemGroup>

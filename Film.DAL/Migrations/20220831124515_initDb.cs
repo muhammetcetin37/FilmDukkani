@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -95,22 +94,22 @@ namespace Film.DAL.Migrations
                     table.PrimaryKey("PK_Paketler", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Sepet",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FilmAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    KategoriAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SepeteEklemeTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Fiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Sepet", x => x.Id);
-                });
+            //migrationBuilder.CreateTable(
+            //    name: "Sepet",
+            //    columns: table => new
+            //    {
+            //        Id = table.Column<int>(type: "int", nullable: false)
+            //            .Annotation("SqlServer:Identity", "1, 1"),
+            //        FilmAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+            //        KategoriAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+            //        SepeteEklemeTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
+            //        Fiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+            //        CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_Sepet", x => x.Id);
+            //    });
 
             migrationBuilder.CreateTable(
                 name: "Tedarikciler",
@@ -222,8 +221,8 @@ namespace Film.DAL.Migrations
             migrationBuilder.DropTable(
                 name: "Paketler");
 
-            migrationBuilder.DropTable(
-                name: "Sepet");
+            //migrationBuilder.DropTable(
+            //    name: "Sepet");
 
             migrationBuilder.DropTable(
                 name: "Uyeler");

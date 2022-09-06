@@ -247,35 +247,35 @@ namespace Film.DAL.Migrations
                     b.ToTable("Paketler");
                 });
 
-            modelBuilder.Entity("Film.Entities.Sepet", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+            //modelBuilder.Entity("Film.Entities.Sepet", b =>
+            //    {
+            //        b.Property<int>("Id")
+            //            .ValueGeneratedOnAdd()
+            //            .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+            //        SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
+            //        b.Property<DateTime>("CreateDate")
+            //            .HasColumnType("datetime2");
 
-                    b.Property<string>("FilmAdi")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+            //        b.Property<string>("FilmAdi")
+            //            .IsRequired()
+            //            .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Fiyat")
-                        .HasColumnType("decimal(18,2)");
+            //        b.Property<decimal>("Fiyat")
+            //            .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("KategoriAdi")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+            //        b.Property<string>("KategoriAdi")
+            //            .IsRequired()
+            //            .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("SepeteEklemeTarihi")
-                        .HasColumnType("datetime2");
+            //        b.Property<DateTime>("SepeteEklemeTarihi")
+            //            .HasColumnType("datetime2");
 
-                    b.HasKey("Id");
+            //        b.HasKey("Id");
 
-                    b.ToTable("Sepet");
-                });
+            //        b.ToTable("Sepet");
+            //    });
 
             modelBuilder.Entity("Film.Entities.Tedarikci", b =>
                 {
